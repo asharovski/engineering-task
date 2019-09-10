@@ -29,7 +29,7 @@ class Navy( object ):
                     above_coordinate = coordinate( x=x, y=ship_coordinate.y )
                     self.not_available_coordinates.add( above_coordinate )
                 x = ship_coordinate.x + 1
-                if x <= 9:
+                if x <= GAME_MATRIX_SIZE - 1:
                     below_coordinate = coordinate( x=x, y=ship_coordinate.y )
                     self.not_available_coordinates.add( below_coordinate )
             y = ship.start.y - 1
@@ -41,11 +41,11 @@ class Navy( object ):
                     left_above = coordinate( x, left_coordinate.y )
                     self.not_available_coordinates.add( left_above )
                 x = left_coordinate.x + 1
-                if x <= 9:
+                if x <= GAME_MATRIX_SIZE - 1:
                     left_bolow = coordinate( x, left_coordinate.y )
                     self.not_available_coordinates.add( left_bolow )
             y = ship.end.y + 1
-            if y <= 9:
+            if y <= GAME_MATRIX_SIZE - 1:
                 right_coordinate = coordinate( ship.end.x, y )
                 self.not_available_coordinates.add( right_coordinate )
                 x = right_coordinate.x - 1
@@ -53,7 +53,7 @@ class Navy( object ):
                     right_above = coordinate( x, right_coordinate.y )
                     self.not_available_coordinates.add( right_above )
                 x = right_coordinate.x + 1
-                if x <= 9:
+                if x <= GAME_MATRIX_SIZE - 1:
                     right_bolow = coordinate( x, right_coordinate.y )
                     self.not_available_coordinates.add( right_bolow )
 
@@ -64,7 +64,7 @@ class Navy( object ):
                     left_coordinate = coordinate( x=ship_coordinate.x, y=y )
                     self.not_available_coordinates.add( left_coordinate )
                 y = ship_coordinate.y + 1
-                if y <= 9:
+                if y <= GAME_MATRIX_SIZE - 1:
                     right_coordinate = coordinate( x=ship_coordinate.x, y=y )
                     self.not_available_coordinates.add( right_coordinate )
             x = ship.start.x - 1
@@ -76,11 +76,11 @@ class Navy( object ):
                     above_left = coordinate( x=above_coordinate.x, y=y )
                     self.not_available_coordinates.add( above_left )
                 y = above_coordinate.y + 1
-                if y <= 9:
+                if y <= GAME_MATRIX_SIZE - 1:
                     above_right = coordinate( x=above_coordinate.x, y=y )
                     self.not_available_coordinates.add( above_right )
             x = ship.end.x + 1
-            if x <= 9:
+            if x <= GAME_MATRIX_SIZE - 1:
                 below_coordinate = coordinate( x=x, y=ship.end.y )
                 self.not_available_coordinates.add( below_coordinate )
                 y = below_coordinate.y - 1
@@ -88,7 +88,7 @@ class Navy( object ):
                     below_left = coordinate( x=below_coordinate.x, y=y )
                     self.not_available_coordinates.add( below_left )
                 y = below_coordinate.y + 1
-                if y <= 9:
+                if y <= GAME_MATRIX_SIZE - 1:
                     below_right = coordinate( x=below_coordinate.x, y=y )
                     self.not_available_coordinates.add( below_right )
 
